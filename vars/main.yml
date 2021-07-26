@@ -1,0 +1,7 @@
+---
+# vars file for pinniped
+pinniped_platform: '{{ pinniped_os }}-{{ pinniped_arch }}'
+pinniped_url: '{{ pinniped_mirror }}/v{{ pinniped_ver }}/pinniped-cli-{{ pinniped_platform }}{{ pinniped_dotexe | default("") }}'
+pinniped_checksum: '{{ pinniped_checksums[pinniped_ver][pinniped_platform] }}'
+pinniped_exe: '{{ pinniped_install_dir }}/pinniped-cli-{{ pinniped_ver }}-{{ pinniped_platform }}{{ pinniped_dotexe | default("") }}'
+pinniped_link: '{{ pinniped_install_dir }}/pinniped-cli'
