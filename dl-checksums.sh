@@ -14,7 +14,7 @@ dl()
     local lfile=$DIR/pinniped-cli-${ver}-${platform}${dotexe}
     if [ ! -e $lfile ];
     then
-        wget -q -O $lfile $url
+        curl -sSLf -o $lfile $url
     fi
     printf "    # %s\n" $url
     printf "    %s: sha256:%s\n" $platform $(sha256sum $lfile | awk '{print $1}')
@@ -28,4 +28,4 @@ dl_ver() {
     dl $ver windows amd64 .exe
 }
 
-dl_ver ${1:-0.14.0}
+dl_ver ${1:-0.15.0}
