@@ -1,6 +1,6 @@
 ---
 # defaults file for pinniped
-pinniped_ver: 0.16.0
+pinniped_ver: 0.17.0
 pinniped_mirror: https://github.com/vmware-tanzu/pinniped/releases/download
 pinniped_os: linux
 pinniped_arch: amd64
@@ -62,3 +62,10 @@ pinniped_checksums:
     linux-amd64: sha256:cb6c3cd4f63ea6126f0c725b1592d97d8e8e61b3f431becbbfb023ba8f91beb3
     # https://github.com/vmware-tanzu/pinniped/releases/download/v0.16.0/pinniped-cli-windows-amd64.exe
     windows-amd64: sha256:fa847cb413770110d806b34dbd6e90689ebb81d981d5c9e6b6ef53bc7a225696
+  '0.17.0':
+    # https://github.com/vmware-tanzu/pinniped/releases/download/v0.17.0/pinniped-cli-darwin-amd64
+    darwin-amd64: sha256:8bc526a8dc438cde93316ea39c2b6ed1df92d16eb067ec68c3f65fd7106de161
+    # https://github.com/vmware-tanzu/pinniped/releases/download/v0.17.0/pinniped-cli-linux-amd64
+    linux-amd64: sha256:2461f2bbe6700f57897888b5483031927a22107dc1470cbcaada1702c499ce28
+    # https://github.com/vmware-tanzu/pinniped/releases/download/v0.17.0/pinniped-cli-windows-amd64.exe
+    windows-amd64: sha256:b24f8dc5dac8153128963c038129664c2a1cf456d9f6deb6abb3134fb7bd8e09
