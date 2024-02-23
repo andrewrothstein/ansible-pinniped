@@ -1,10 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.pinniped
+  hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
   tasks:
-  - command: pinniped-cli version
-    register: pinniped_test_output
-  - name: pinniped-cli version
-    debug:
-      msg: '{{ pinniped_test_output.stdout }}'
+    - name: Executing 'pinniped-cli version'
+      ansible.builtin.command: pinniped-cli version
+      changed_when: false
+      register: pinniped_test_output
+    - name: Output of 'pinniped-cli version'
+      ansible.builtin.debug:
+        msg: '{{ pinniped_test_output.stdout }}'

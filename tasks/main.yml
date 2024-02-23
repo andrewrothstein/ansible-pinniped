@@ -1,6 +1,6 @@
 ---
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -9,18 +9,18 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: downloading {{ pinniped_url }} to {{ pinniped_exe }}
+- name: Downloading {{ pinniped_url }} to {{ pinniped_exe }}
   become: true
   become_user: root
-  get_url:
+  ansible.builtin.get_url:
     url: '{{ pinniped_url }}'
     dest: '{{ pinniped_exe }}'
     checksum: '{{ pinniped_checksum }}'
-    mode: 0755
-- name: linking {{ pinniped_link }} to {{ pinniped_exe }}
+    mode: '755'
+- name: Linking {{ pinniped_link }} to {{ pinniped_exe }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ pinniped_exe }}'
     dest: '{{ pinniped_link }}'
     state: link
